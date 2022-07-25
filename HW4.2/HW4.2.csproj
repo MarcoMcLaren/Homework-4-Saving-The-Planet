@@ -120,12 +120,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Globals.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsertDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Aluminium.cs" />
     <Compile Include="Models\Basic.cs" />
+    <Compile Include="Models\Glass.cs" />
     <Compile Include="Models\Plastic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

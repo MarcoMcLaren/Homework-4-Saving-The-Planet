@@ -9,5 +9,9 @@ namespace HW4._2.Models
     { 
         public int AmountOfBottles { get; set; }
 
+        public Plastic(int amountOfBottles, int Weight, Month RecycleMonth)
+        {
+            AmountOfBottles = amountOfBottles;
+        }
     }
 }

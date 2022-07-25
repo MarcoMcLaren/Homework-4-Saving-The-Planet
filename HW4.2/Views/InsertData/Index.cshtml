@@ -11,7 +11,7 @@
     <div class="col-md-3">
         <h3>Paper</h3>
         <br />
-        @using (Html.BeginForm("DoInsert", "InsertData", FormMethod.Post))
+        @using (Html.BeginForm("InsertPaper", "InsertData", FormMethod.Post))
         {
             <label>Amount in Kg: </label>
             @Html.TextBox("PaperKilograms", null, new { @class = "form-control", @type = "number" })<br />
