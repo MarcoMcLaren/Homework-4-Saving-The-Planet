@@ -19,13 +19,14 @@
             @Html.DropDownList("PaperMonth",
                     new SelectList(Enum.GetValues(typeof(Month))),
                     "Choose Option",
-                    new { @class = "form-control" })
+                    new { @class = "form-control" }) <br/>
+            <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
     <div class="col-md-3">
         <h3>Plastic</h3>
         <br />
-        @using (Html.BeginForm("DoInsert", "InsertData", FormMethod.Post))
+        @using (Html.BeginForm("InsertPlastic", "InsertData", FormMethod.Post))
         {
             <label>Amount in Kg: </label>
             @Html.TextBox("PlasticKilograms", null, new { @class = "form-control", @type = "number" })<br />
@@ -35,7 +36,8 @@
                     "Choose Option",
                     new { @class = "form-control" })<br />
             <label>Amount of Bottles: </label>
-            @Html.TextBox("bottlesAmount", null, new { @class = "form-control", @type = "number" })
+            @Html.TextBox("bottlesAmount", null, new { @class = "form-control", @type = "number" })<br />
+            <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
     <div class="col-md-3">
@@ -43,7 +45,7 @@
             Aluminium
         </h3>
         <br />
-        @using (Html.BeginForm("DoInsert", "InsertData", FormMethod.Post))
+        @using (Html.BeginForm("InsertAluminium", "InsertData", FormMethod.Post))
         {
             <label>Amount in Kg: </label>
             @Html.TextBox("AluminiumKilograms", null, new { @class = "form-control", @type = "number" })
@@ -58,12 +60,13 @@
             <label>Amount of Cans: </label>
             @Html.TextBox("CansAmount", null, new { @class = "form-control", @type = "number" })
             <br />
+            <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
     <div class="col-md-3">
         <h3>Glass</h3>
         <br />
-        @using (Html.BeginForm("DoInsert", "InsertData", FormMethod.Post))
+        @using (Html.BeginForm("InsertGlass", "InsertData", FormMethod.Post))
         {
             <label>Amount in Kg: </label>
             @Html.TextBox("GlassKilograms", null, new { @class = "form-control", @type = "number" })<br />
@@ -78,8 +81,11 @@
 
             <label>Amount of Wine Bottles: </label>
             @Html.TextBox("WineBottlesAmount", null, new { @class = "form-control", @type = "number" })<br />
+            <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
 
 </div>
-
+<div class="row">
+    <h3>@ViewBag.Message</h3>
+</div>

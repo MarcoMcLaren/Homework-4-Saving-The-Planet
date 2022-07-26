@@ -40,9 +40,83 @@ namespace HW4._2.Controllers
         }
 
         //This is where the data will be send from the Insert Data View
-        public ActionResult InsertPaper()
+        public ActionResult InsertPaper(int PaperKilograms, string PaperMonth)
         {
-            return View("Paper"); //Will take you to the Paper view when data is submitted successfully
+            try
+            {
+                SqlCommand myCommand = new SqlCommand("Insert into Paper VALUES ('"+PaperKilograms+"', '"+PaperMonth+"') ", myConnection);
+                myConnection.Open();
+                ViewBag.Message = "Success: " + myCommand.ExecuteNonQuery() + " rows were updated";
+            }
+            catch
+            {
+                ViewBag.Message = "Please Try Again";
+            }
+            finally{
+                myConnection.Close();
+            }
+
+            return View("Index"); //Will take you to the Paper view when data is submitted successfully
+        }
+
+        public ActionResult InsertPlastic(int PlasticKilograms, string PlasticMonth, int bottlesAmount)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand("Insert into Plastic VALUES ('" + PlasticKilograms + "', '" + PlasticMonth + "', '" + bottlesAmount + "') ", myConnection);
+                myConnection.Open();
+                ViewBag.Message = "Success: " + myCommand.ExecuteNonQuery() + " rows were updated";
+            }
+            catch
+            {
+                ViewBag.Message = "Please Try Again";
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+            return View("Index"); //Will take you to the Paper view when data is submitted successfully
+        }
+
+        public ActionResult InsertAluminium(int AluminiumKilograms, string AluminiumMonth, int CansAmount)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand("Insert into Aluminum VALUES ('" + AluminiumKilograms + "', '" + AluminiumMonth + "', '" + CansAmount + "') ", myConnection);
+                myConnection.Open();
+                ViewBag.Message = "Success: " + myCommand.ExecuteNonQuery() + " rows were updated";
+            }
+            catch
+            {
+                ViewBag.Message = "Please Try Again";
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+            return View("Index"); //Will take you to the Paper view when data is submitted successfully
+        }
+
+        public ActionResult InsertGlass(int GlassKilograms, string GlassMonth, int BeerBottlesAmount, int WineBottlesAmount)
+        {
+            try
+            {
+                SqlCommand myCommand = new SqlCommand("Insert into Glass VALUES ('" + GlassKilograms + "', '" + GlassMonth + "', '" + BeerBottlesAmount + "', '" + WineBottlesAmount + "') ", myConnection);
+                myConnection.Open();
+                ViewBag.Message = "Success: " + myCommand.ExecuteNonQuery() + " rows were updated";
+            }
+            catch
+            {
+                ViewBag.Message = "Please Try Again";
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+
+            return View("Index"); //Will take you to the Paper view when data is submitted successfully
         }
     }
 }
