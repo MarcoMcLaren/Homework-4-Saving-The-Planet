@@ -1,0 +1,19 @@
+﻿@model List<HW4._2.Models.Basic>
+
+<br/>
+<h2>Paper Data</h2>
+<h3>@ViewBag.errMessage</h3>
+<table class="table">
+    <tr>
+        <th>WEIGHT</th>
+        <th>Month</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+        <tr>
+            <td>@item.Weight</td>
+            <td>@item.RecycleMonth</td>
+        </tr>
+            }
+</table>
+
