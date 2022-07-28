@@ -14,5 +14,6 @@ namespace HW4._2.Models
             BeerBottlesAmount = beerBottlesAmount;
             WineBottlesAmount = wineBottlesAmount;
         }
+
     }
 }

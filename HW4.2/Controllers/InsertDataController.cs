@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using HW4._2.Models;
 
 namespace HW4._2.Controllers
 {
@@ -18,35 +19,23 @@ namespace HW4._2.Controllers
             return View();
         }
 
-        //Paper view displaying the summarized data typed into the Insert Data view with the 4 columns
-        public ActionResult Paper()
-        {
-            return View();
-        }
-        //Plastic view displaying the summarized data typed into the Insert Data view with the 4 columns
-        public ActionResult Plastic()
-        {
-            return View();
-        }
-        //Glass view displaying the summarized data typed into the Insert Data view with the 4 columns
-        public ActionResult Glass ()
-        {
-            return View();
-        }
-        //Aluminium view displaying the summarized data typed into the Insert Data view with the 4 columns
-        public ActionResult Aluminium()
-        {
-            return View();
-        }
-
         //This is where the data will be send from the Insert Data View
         public ActionResult InsertPaper(int PaperKilograms, string PaperMonth)
         {
             try
             {
-                SqlCommand myCommand = new SqlCommand("Insert into Paper VALUES ('"+PaperKilograms+"', '"+PaperMonth+"') ", myConnection);
                 myConnection.Open();
+                SqlCommand myCommand = new SqlCommand("Insert into Paper VALUES ('"+PaperKilograms+"', '"+PaperMonth+"') ", myConnection);
                 ViewBag.Message = "Success: " + myCommand.ExecuteNonQuery() + " rows were updated";
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                Globals.BasicList.Clear();
+                while (myReader.Read())
+                {
+                    Basic basic = new Basic();
+                    basic.Weight = (int)myReader["KG"];
+                    basic.RecycleMonth = (Month)myReader["Month"];
+                    Globals.BasicList.Add(basic);
+                }
             }
             catch
             {
@@ -56,7 +45,7 @@ namespace HW4._2.Controllers
                 myConnection.Close();
             }
 
-            return View("Index"); //Will take you to the Paper view when data is submitted successfully
+            return View(Globals.BasicList); //Will take you to the Paper view when data is submitted successfully
         }
 
         public ActionResult InsertPlastic(int PlasticKilograms, string PlasticMonth, int bottlesAmount)
