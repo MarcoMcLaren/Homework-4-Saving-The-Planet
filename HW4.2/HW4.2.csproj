@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DeleteController.cs" />
     <Compile Include="Controllers\DisplayDataController.cs" />
     <Compile Include="Controllers\Globals.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -127,9 +128,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Aluminium.cs" />
-    <Compile Include="Models\Basic.cs" />
+    <Compile Include="Models\Aluminum.cs" />
     <Compile Include="Models\Glass.cs" />
+    <Compile Include="Models\Paper.cs" />
     <Compile Include="Models\Plastic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,7 +167,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\InsertData\Index.cshtml" />
+    <Content Include="Views\DisplayData\Aluminum.cshtml" />
+    <Content Include="Views\DisplayData\Glass.cshtml" />
     <Content Include="Views\DisplayData\Paper.cshtml" />
+    <Content Include="Views\DisplayData\Plastic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

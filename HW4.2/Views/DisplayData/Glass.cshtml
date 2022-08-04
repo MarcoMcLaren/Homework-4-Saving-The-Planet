@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HW4._2.Models.Glass>
+
+@{
+    ViewBag.Title = "Glass";
+}
+
+<h2>Glass</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecycleMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfBeerBottles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfWineBottles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecycleMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountOfBeerBottles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountOfWineBottles)
+        </td>
+        <td>
+            <input type="button" class="btn btn-success" value="Edit" onclick=location.href ='@Url.Action("Update", "UpdateDelete")' />
+            <input type="button" class="btn btn-danger" value="Delete" onclick=location.href ='@Url.Action("Delete", "UpdateDelete")' />
+        </td>
+    </tr>
+}
+
+</table>

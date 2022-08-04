@@ -5,15 +5,10 @@ using System.Web;
 
 namespace HW4._2.Models
 {
-    public class Glass : Basic
+    public class Glass : Paper
     {
-        public int BeerBottlesAmount { get; set; }
-        public int WineBottlesAmount { get; set; }
-        public Glass(int beerBottlesAmount, int wineBottlesAmount, int weight, Month recycleMonth)
-        {
-            BeerBottlesAmount = beerBottlesAmount;
-            WineBottlesAmount = wineBottlesAmount;
-        }
-
+        public new int ID { get; set; }
+        public int AmountOfBeerBottles { get; set; }
+        public int AmountOfWineBottles { get; set; }
     }
 }

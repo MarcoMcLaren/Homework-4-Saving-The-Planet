@@ -5,13 +5,10 @@ using System.Web;
 
 namespace HW4._2.Models
 {
-    public class Plastic : Basic
-    { 
+    public class Plastic : Paper
+    {
+        public new int ID { get; set; }
         public int AmountOfBottles { get; set; }
-
-        public Plastic(int amountOfBottles, int Weight, Month RecycleMonth)
-        {
-            AmountOfBottles = amountOfBottles;
-        }
     }
+   
 }

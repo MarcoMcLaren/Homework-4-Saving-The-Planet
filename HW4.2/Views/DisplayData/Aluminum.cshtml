@@ -1,11 +1,10 @@
-﻿@model IEnumerable<HW4._2.Models.Paper>
+﻿@model IEnumerable<HW4._2.Models.Aluminum>
 
 @{
-    ViewBag.Title = "Paper";
+    ViewBag.Title = "Aluminum";
 }
 
-<h2>Paper</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Aluminum</h2>
 <table class="table">
     <tr>
         <th>
@@ -16,6 +15,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RecycleMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOfCans)
         </th>
         <th></th>
     </tr>
@@ -32,8 +34,11 @@
             @Html.DisplayFor(modelItem => item.RecycleMonth)
         </td>
         <td>
-            <input type="button" class="btn btn-success" value="Update" href='@Url.Action("", "")' />
-            <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("DeletePaper", "Delete", new {id = item.ID})'" />
+            @Html.DisplayFor(modelItem => item.AmountOfCans)
+        </td>
+        <td>
+            <input type="button" class="btn btn-success" value="Edit" onclick=location.href ='@Url.Action("Update", "UpdateDelete")' />
+            <input type="button" class="btn btn-danger" value="Delete" onclick=location.href ='@Url.Action("Delete", "UpdateDelete")' />
         </td>
     </tr>
 }

@@ -13,9 +13,10 @@ namespace HW4._2.Controllers
         //Please note this is connected to MARCO_LAPTOP, if you wish to run it on your own computer you will have to change the path
 
         //Create all the lists from their respective models
-        public static List<Basic> BasicList = new List<Basic>();
+        public static List<Paper> PaperList = new List<Paper>();
         public static List<Plastic> PlasticList = new List<Plastic>();
         public static List<Glass> GlassList = new List<Glass>();
-        public static List<Aluminium> AluminiumList = new List<Aluminium>();
+        public static List<Aluminum> AluminumList = new List<Aluminum>();
+
     }
 }

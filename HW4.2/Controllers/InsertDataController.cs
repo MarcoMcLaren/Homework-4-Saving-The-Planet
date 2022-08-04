@@ -57,7 +57,7 @@ namespace HW4._2.Controllers
                 myConnection.Close();
             }
 
-            return RedirectToAction("Paper", "DisplayData"); ; //Will take you to the Paper view when data is submitted successfully
+            return RedirectToAction("Plastic", "DisplayData"); ; //Will take you to the Paper view when data is submitted successfully
         }
 
         public ActionResult InsertAluminium(int AluminiumKilograms, string AluminiumMonth, int CansAmount)
@@ -77,7 +77,7 @@ namespace HW4._2.Controllers
                 myConnection.Close();
             }
 
-            return RedirectToAction("Paper", "DisplayData"); //Will take you to the Paper view when data is submitted successfully
+            return RedirectToAction("Aluminum", "DisplayData"); //Will take you to the Paper view when data is submitted successfully
         }
 
         public ActionResult InsertGlass(int GlassKilograms, string GlassMonth, int BeerBottlesAmount, int WineBottlesAmount)
@@ -97,7 +97,7 @@ namespace HW4._2.Controllers
                 myConnection.Close();
             }
 
-            return RedirectToAction("Paper", "DisplayData"); //Will take you to the Paper view when data is submitted successfully
+            return RedirectToAction("Glass", "DisplayData"); //Will take you to the Paper view when data is submitted successfully
         }
     }
 }
