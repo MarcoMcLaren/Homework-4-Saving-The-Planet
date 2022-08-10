@@ -47,52 +47,54 @@
 </div>
 
 <script>
+    
     const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
+            '',
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
 
-    ];
-    const arr = [];
+        ];
+        const arr = [];
 
-    var rowCount = document.getElementById('table').rows.length;
+        var rowCount = document.getElementById('table').rows.length;
 
-    //jquery code bewlow is to get all the values in a column
-    $(document).ready(function () {
-        $("#table tr").each(function () {
-            arr.push($(this).find("td:nth-child(2)").text()); //put elements into array
+        //jquery code bewlow is to get all the values in a column
+        $(document).ready(function () {
+            $("#table tr").each(function () {
+                arr.push($(this).find("td:nth-child(2)").text()); //put elements into array
+            });
+            ///////////////////////////////////////////////////////////
         });
-        ///////////////////////////////////////////////////////////
-    });
-    console.log(arr);
-    var data = {
-        labels: labels,
-        datasets: [{
-            label: 'Paper Year Summary',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: arr
-        }]
-    };
+        console.log(arr);
+        var data = {
+            labels: labels,
+            datasets: [{
+                label: 'Paper Year Summary',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: arr
+            }]
+        };
 
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
 
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    
 </script>

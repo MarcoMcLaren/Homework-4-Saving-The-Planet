@@ -5,7 +5,7 @@
 }
 
 <h2>Glass</h2>
-<table class="table">
+<table class="table" id="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ID)
@@ -25,27 +25,101 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecycleMonth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AmountOfBeerBottles)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AmountOfWineBottles)
-        </td>
-        <td>
-            <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("DeleteGlass", "Delete", new {id = item.ID})'" />
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecycleMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfBeerBottles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfWineBottles)
+            </td>
+            <td>
+                <input type="button" class="btn btn-success" value="Update" onclick="location.href='@Url.Action("", "InsertData"@*, new {id = item.ID}*@)'" />
+                <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("DeleteGlass", "Delete", new {id = item.ID})'" />
+            </td>
+        </tr>
+    }
+
 
 </table>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="well">
+
+            <div>
+                <canvas id="myChartTwo"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Canvas for the chart-->
+<!--Kode vir die eerste chart, die een wat die totale gewig wys-->
+<script>
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+
+    ];
+    const arr = [];
+    const arrTwo = [];
+    const arrThree = [];
+    var rowCount = document.getElementById('table').rows.length;
+
+    //jquery code bewlow is to get all the values in a column
+    $(document).ready(function () {
+        $("#table tr").each(function () {
+            arr.push($(this).find("td:nth-child(2)").text()); //put elements into array
+        });
+    });
+    console.log(arr);
+    var data = {
+        labels: labels,
+        datasets: [{
+            label: 'Paper Year Summary',
+            backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE"],
+            data: arr,
+            backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE"]
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+</script>
