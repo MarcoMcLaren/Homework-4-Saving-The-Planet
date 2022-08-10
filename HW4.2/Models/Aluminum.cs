@@ -11,4 +11,4 @@ namespace HW4._2.Models
         public int AmountOfCans { get; set; }
     }
 
-}
+};

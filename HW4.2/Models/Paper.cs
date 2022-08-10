@@ -14,7 +14,7 @@ namespace HW4._2.Models
 
     }
     //Populate dropdown list
-    public enum Month 
+    public enum Month
     {
         January, February, March, April, May, June, July, August, September, October, November, December
     }

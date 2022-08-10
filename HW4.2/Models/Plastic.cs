@@ -10,5 +10,5 @@ namespace HW4._2.Models
         public new int ID { get; set; }
         public int AmountOfBottles { get; set; }
     }
-   
+
 }
