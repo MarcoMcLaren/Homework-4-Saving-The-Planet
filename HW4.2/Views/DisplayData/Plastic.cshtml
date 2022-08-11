@@ -98,7 +98,7 @@
     var data = {
         labels: labels,
         datasets: [{
-            label: 'Paper Year Summary',
+            label: 'Plastic Year Summary in KG',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: arr
@@ -126,7 +126,7 @@
     var dataTwo = {
         labels: labels,
         datasets: [{
-            label: 'Cans Summary',
+            label: 'Amount of Cans Collected',
             backgroundColor: 'rgb(64, 67, 255)',
             borderColor: 'rgb(64, 67, 255)',
             data: arrTwo,
@@ -143,4 +143,37 @@
         document.getElementById('myChartTwo'),
         configTwo
     );
+    /////////////////////////////////////////////////////////////////////Automatically reload the page 
+    function fireEvent(element, event) {
+        if (document.createEventObject) {
+            // dispatch for IE
+            var evt = document.createEventObject();
+            return element.fireEvent('on' + event, evt)
+        }
+        else {
+            // dispatch for firefox + others
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true); // event type,bubbling,cancelable
+            return !element.dispatchEvent(evt);
+        }
+    }
+
+    setTimeout(function () {
+
+        var links = document.getElementsByTagName("link");
+        var st = [];
+        for (var x = 0; x < links.length; x++)
+            if (links[x].getAttribute("rel") == "stylesheet") {
+                st.push(links[x]);
+                links[x].wasAtt = links[x].getAttribute("href");
+                links[x].setAttribute("href", "");
+            }
+        setTimeout(function () {
+            for (var x = 0; x < st.length; x++)
+                st[x].setAttribute("href", st[x].wasAtt);
+            setTimeout(function () {
+                fireEvent(window, "load");
+            }, 0);
+        }, 0);
+    }, 0); // test reload after five seconds
 </script>

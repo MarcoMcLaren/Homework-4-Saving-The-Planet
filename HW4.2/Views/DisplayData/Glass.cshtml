@@ -75,6 +75,7 @@
 <!--Kode vir die eerste chart, die een wat die totale gewig wys-->
 <script>
     const labels = [
+        '',
         'January',
         'February',
         'March',
@@ -90,8 +91,6 @@
 
     ];
     const arr = [];
-    const arrTwo = [];
-    const arrThree = [];
     var rowCount = document.getElementById('table').rows.length;
 
     //jquery code bewlow is to get all the values in a column
@@ -104,22 +103,54 @@
     var data = {
         labels: labels,
         datasets: [{
-            label: 'Paper Year Summary',
+            label: 'Glass Year Summary in KG',
             backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE"],
             data: arr,
             backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE"]
         }]
     };
-
+   
     const config = {
         type: 'pie',
-        data: data,
-        options: {}
+        data: data
+        /*options: {}*/
     };
 
     const myChart = new Chart(
         document.getElementById('myChart'),
         config
     );
+    /////////////////////////////////////////////////////////////////////Automatically reload the page 
+    function fireEvent(element, event) {
+        if (document.createEventObject) {
+            // dispatch for IE
+            var evt = document.createEventObject();
+            return element.fireEvent('on' + event, evt)
+        }
+        else {
+            // dispatch for firefox + others
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, true); // event type,bubbling,cancelable
+            return !element.dispatchEvent(evt);
+        }
+    }
 
+    setTimeout(function () {
+
+        var links = document.getElementsByTagName("link");
+        var st = [];
+        for (var x = 0; x < links.length; x++)
+            if (links[x].getAttribute("rel") == "stylesheet") {
+                st.push(links[x]);
+                links[x].wasAtt = links[x].getAttribute("href");
+                links[x].setAttribute("href", "");
+            }
+        setTimeout(function () {
+            for (var x = 0; x < st.length; x++)
+                st[x].setAttribute("href", st[x].wasAtt);
+            setTimeout(function () {
+                fireEvent(window, "load");
+            }, 0);
+        }, 0);
+    }, 0); // test reload after five seconds
 </script>
