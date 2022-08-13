@@ -46,9 +46,19 @@
     <canvas id="myChart" width="100" height="50"></canvas>
 </div>
 <script>
-
-        const labels = [
-            '',
+    const arr = [];
+    const arrMonths = [];
+    var rowCount = document.getElementById('table').rows.length;
+    //jquery code bewlow is to get all the values in a column
+    $(document).ready(function () {
+        $("#table tr").each(function () {
+            arrMonths.push($(this).find("td:nth-child(3)").text()); //put elements into array
+        });
+        ///////////////////////////////////////////////////////////
+    });
+    console.log(arrMonths);
+    const labels = [
+        '', /*arrMonths*/
             'January',
             'February',
             'March',
@@ -60,12 +70,13 @@
             'September',
             'October',
             'November',
-            'December'
+        'December',
+            ''
 
         ];
-        const arr = [];
+       
 
-        var rowCount = document.getElementById('table').rows.length;
+        
 
         //jquery code bewlow is to get all the values in a column
         $(document).ready(function () {

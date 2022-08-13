@@ -91,15 +91,21 @@
 
     ];
     const arr = [];
+    const arrTwo = [];
+    const arrThree = [];
     var rowCount = document.getElementById('table').rows.length;
 
-    //jquery code bewlow is to get all the values in a column
+    //jquery code bewlow is to get all the values in a column and populate the arrays
     $(document).ready(function () {
         $("#table tr").each(function () {
             arr.push($(this).find("td:nth-child(2)").text()); //put elements into array
         });
     });
+
+/////////////////////////////////////////////////////////////////////Pie chart 
     console.log(arr);
+    console.log(arrTwo);
+    console.log(arrThree);
     var data = {
         labels: labels,
         datasets: [{
@@ -119,6 +125,62 @@
     const myChart = new Chart(
         document.getElementById('myChart'),
         config
+    );
+
+
+
+
+    /////////////////////////////////////////////////////////////////////Double line chart
+
+    $(document).ready(function () {
+        $("#table tr").each(function () {
+            arrTwo.push($(this).find("td:nth-child(4)").text()); //put elements into array
+        });
+    });
+
+    $(document).ready(function () {
+        $("#table tr").each(function () {
+            arrThree.push($(this).find("td:nth-child(5)").text()); //put elements into array
+        });
+    });
+    const dataTwo = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Wine Bottles',
+                data: arrThree,
+                borderColor: 'rgb(254, 41, 42)',
+                backgroundColor: 'rgb(254, 41, 42)'
+            },
+            {
+                label: 'Beer Bottles',
+                data: arrTwo,
+                borderColor: 'rgb(14, 106, 208)',
+                backgroundColor: 'rgb(14, 106, 208)'
+            }
+        ]
+    };
+
+    const configTwo = {
+        type: 'line',
+        data: dataTwo,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Line Chart'
+                }
+            }
+        },
+    };
+
+    const myChartTwo = new Chart(
+        document.getElementById('myChartTwo'),
+        configTwo
     );
     /////////////////////////////////////////////////////////////////////Automatically reload the page 
     function fireEvent(element, event) {
