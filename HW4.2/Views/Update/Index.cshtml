@@ -1,0 +1,73 @@
+﻿@using HW4._2.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h2>Update Data</h2>
+<br />
+<div class="row">
+    <div class="col-md-3" style="border-style: solid; border-right: 0 ">
+        <h3>Paper</h3>
+        <br />
+        @using (Html.BeginForm("UpdatePaper", "Update", FormMethod.Post))
+        {
+            <label>ID: </label>
+            @Html.TextBox("ID", null, new { @class = "form-control", @type = "number" })<br />
+            <label>Amount in Kg: </label>
+            @Html.TextBox("PaperKilograms", null, new { @class = "form-control", @type = "number" })<br />
+            <button type="submit" class="btn btn-success btn-lg" style="align-items: center;">UPDATE</button>
+        }
+    </div>
+    <div class="col-md-3" style="border-style: solid; border-right: 0 ">
+        <h3>Plastic</h3>
+        <br />
+        @using (Html.BeginForm("UpdatePlastic", "Update", FormMethod.Post))
+        {
+            <label>ID: </label>
+            @Html.TextBox("ID", null, new { @class = "form-control", @type = "number" })<br />
+            <label>Amount in Kg: </label>
+            @Html.TextBox("PlasticKilograms", null, new { @class = "form-control", @type = "number" })<br />
+            <label>Amount of Bottles: </label>
+            @Html.TextBox("bottlesAmount", null, new { @class = "form-control", @type = "number" })<br />
+            <button type="submit" class="btn btn-success btn-lg" style="align-items: center;">UPDATE</button>
+        }
+    </div>
+    <div class="col-md-3" style="border-style: solid; border-right: 0 ">
+        <h3>
+            Aluminium
+        </h3>
+        <br />
+        @using (Html.BeginForm("UpdateAluminium", "Update", FormMethod.Post))
+        {
+            <label>ID: </label>
+            @Html.TextBox("ID", null, new { @class = "form-control", @type = "number" })<br />
+            <label>Amount in Kg: </label>
+            @Html.TextBox("AluminiumKilograms", null, new { @class = "form-control", @type = "number" })
+            <br />
+            <label>Amount of Cans: </label>
+            @Html.TextBox("CansAmount", null, new { @class = "form-control", @type = "number" })
+            <br />
+            <button type="submit" class="btn btn-success btn-lg" style="align-items:center">UPDATE</button>
+        }
+    </div>
+    <div class="col-md-3" style="border-style: solid;">
+        <h3>Glass</h3>
+        <br />
+        @using (Html.BeginForm("UpdateGlass", "Update", FormMethod.Post))
+        {
+            <label>ID: </label>
+            @Html.TextBox("ID", null, new { @class = "form-control", @type = "number" })<br />
+            <label>Amount in Kg: </label>
+            @Html.TextBox("GlassKilograms", null, new { @class = "form-control", @type = "number" })<br />
+            
+            <label>Amount of Beer Bottles: </label>
+            @Html.TextBox("BeerBottlesAmount", null, new { @class = "form-control", @type = "number" })<br />
+
+            <label>Amount of Wine Bottles: </label>
+            @Html.TextBox("WineBottlesAmount", null, new { @class = "form-control", @type = "number" })<br />
+            <button type="submit" class="btn btn-success btn-lg" style="align-items:center">UPDATE</button>
+        }
+    </div>
+</div>

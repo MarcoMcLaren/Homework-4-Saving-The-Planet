@@ -12,7 +12,6 @@ namespace HW4._2.Controllers
     {
         //Establish a connection to database
         private SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
-
         // GET: InsertData view is named as Index
         public ActionResult Index()
         {
@@ -23,6 +22,7 @@ namespace HW4._2.Controllers
         //This is where the data will be send from the Insert Data View
         public ActionResult InsertPaper(int PaperKilograms, string PaperMonth)
         {
+
             try
             {
                 myConnection.Open();

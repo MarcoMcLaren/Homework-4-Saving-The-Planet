@@ -8,8 +8,8 @@
 <h2>Insert Data</h2>
 <br />
 <div class="row">
-    <div class="col-md-3">
-        <h3>Paper</h3>
+    <div class="col-md-3" style="border-style: solid; border-right: 0 ">
+        <h3 style="background-color:">Paper</h3>
         <br />
         @using (Html.BeginForm("InsertPaper", "InsertData", FormMethod.Post))
         {
@@ -19,11 +19,11 @@
             @Html.DropDownList("PaperMonth",
                     new SelectList(Enum.GetValues(typeof(Month))),
                     "Choose Option",
-                    new { @class = "form-control" }) <br/>
+                    new { @class = "form-control" }) <br />
             <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="border-style: solid; border-right: 0 ">
         <h3>Plastic</h3>
         <br />
         @using (Html.BeginForm("InsertPlastic", "InsertData", FormMethod.Post))
@@ -40,7 +40,7 @@
             <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style=" border-style: solid; border-right: 0 ">
         <h3>
             Aluminium
         </h3>
@@ -63,7 +63,7 @@
             <button type="submit" class="btn btn-primary btn-lg" style="align-items:center">Save</button>
         }
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style=" border-style: solid; ">
         <h3>Glass</h3>
         <br />
         @using (Html.BeginForm("InsertGlass", "InsertData", FormMethod.Post))

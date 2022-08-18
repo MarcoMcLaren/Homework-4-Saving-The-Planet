@@ -44,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.AmountOfWineBottles)
             </td>
             <td>
-                <input type="button" class="btn btn-success" value="Update" onclick="location.href='@Url.Action("", "InsertData"@*, new {id = item.ID}*@)'" />
+                <input type="button" class="btn btn-success" value="Update" onclick="location.href='@Url.Action("Index", "Update")'" />
                 <input type="button" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("DeleteGlass", "Delete", new {id = item.ID})'" />
             </td>
         </tr>

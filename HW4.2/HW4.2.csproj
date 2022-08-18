@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -184,11 +184,11 @@
     <Content Include="Views\DisplayData\Glass.cshtml" />
     <Content Include="Views\DisplayData\Paper.cshtml" />
     <Content Include="Views\DisplayData\Plastic.cshtml" />
+    <Content Include="Views\Update.cshtml" />
+    <Content Include="Views\Update\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\UpdateViews\" />
-    <Folder Include="Views\Update\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
