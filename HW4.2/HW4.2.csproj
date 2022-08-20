@@ -150,9 +150,14 @@
     <Content Include="Global.asax" />
     <Content Include="Images\backgrd.jpg" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\HW 4 Diagram.png" />
     <Content Include="Images\ocean.jpg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\tree.jpg" />
+    <Content Include="Images\UC1.png" />
+    <Content Include="Images\UC2.png" />
+    <Content Include="Images\UC3.png" />
+    <Content Include="Images\UC4.png" />
     <Content Include="Scripts\chart.js" />
     <Content Include="Scripts\chart.min.js" />
     <Content Include="Scripts\Common.js" />
